@@ -1,0 +1,210 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+  <title>Ph1sh Gr1P </title>
+
+  <!-- Bootstrap -->
+  <link href="{{url_for('static',filename='vendor/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="{{url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+
+
+  <!-- Custom Theme Style -->
+  <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+  <style type="text/css">
+    .x_panel{
+      margin: 0px auto !important;
+      width: 60% !important;
+      float: none;
+      border-radius: 10px !important;
+      color:#fff !important; 
+      background: #161919;
+      margin-top: 5% !important;
+    }
+    table{
+      color: #fff !important;
+    }
+    .mainbox {
+
+      margin: auto !important;
+      text-align: center !important;
+      border-radius: 10px !important;
+      background: #161818 !important;
+      /*box-shadow: 0px 0px 15px black !important;*/
+      margin-bottom: 30px !important;
+      display: inline-block !important;
+      padding: 30px !important;
+
+    }
+    .container{
+      background: #161919 !important;
+    }
+    body .container.body .right_col
+    {
+      background: #161818 !important;
+      text-align: center !important;
+
+    }
+  </style>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title" style="font-family: 'Pacifico', cursive; font-size: 30px"><span>Ph1sh Gr1P</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+             
+              <ul class="nav side-menu">
+                <li ><a href="/"></i> Home<span class="label label-success pull-right"></span></a></li>
+                <li ><a href="/header"></i> Header Details<span class="label label-success pull-right"></span></a></li>
+                <li><a href='/text'></i> Text in Mail <span class="label label-success pull-right"></span></a></li>
+                <li><a href="/html-content"></i> Mail Html <span class="label label-success pull-right"></span></a></li>
+                <li><a href="attach-analysis"></i> Attachment File Analysis <span class="label label-success pull-right"></span></a></li>
+                <li><a href="/urls"></i> Urls & IP <span class="label label-success pull-right"></span></a></li>
+
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /top navigation -->
+
+    <!-- page content -->
+    <div class="right_col" role="main">
+      <div class="">
+        <div class="clearfix"></div>
+        <div class="row" >
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Macro Stream <small>M = contains Macros Code & m =  Module (and there is no code) </small></h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+              <table class="table">
+               <thead>
+                <tr>
+
+                  <th>Stream Number</th>
+                  <th>Macros</th>
+                  <th>Content Size</th>
+                  <th>Object Name</th>
+                </tr>
+              </thead>
+              <tbody>
+               {% for key, value in macro_streams.items() %}
+               <tr>
+                {% for sub_key in value %}
+
+                {% for results in sub_key %}
+
+                <td>{{results}}</td>
+
+                {% endfor %}
+              </tr>
+              {% endfor %}
+
+              {% endfor %}
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>All Stream <small>M = contains Macros Code & m =  Module (and there is no code) </small></h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+          <table class="table">
+           <thead>
+            <tr>
+
+              <th>Stream Number</th>
+              <th>Macros</th>
+              <th>Content Size</th>
+              <th>Object Name</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for key, value in updated_stream.items() %}
+           <tr>
+            {% for sub_key in value %}
+
+            {% for results in sub_key %}
+
+            <td>{{results}}</td>
+
+            {% endfor %}
+          </tr>
+          {% endfor %}
+
+          {% endfor %}
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>     
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="{{url_for('static',filename='vendor/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{url_for('static',filename='vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+
+
+<!-- Custom Theme Scripts -->
+<script src="{{url_for('static',filename='js/custom.min.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+.heading {
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    width: 100%;
+}
+.heading h1 {
+    color: limegreen;
+    font-size: 70px;
+}
+.heading h3 {
+    color: wheat;
+    font-size: 20px;
+}
+#particles-js {
+    background: black;
+    height: 100vh;
+}
+       
+.text-lobaster{
+ font-family: 'Lobster', cursive; 
+}
+.text-lobaster2{
+  font-family: 'Lobster Two', cursive;
+}
+.text-grenze{
+  font-family: 'Grenze Gotisch', cursive;
+}
+
+.text-kaushan{
+  font-family: 'Kaushan Script', cursive !important;}
+
+.text-audiowide
+{
+  font-family: 'Audiowide', cursive !important; 
+}
+.text-marker
+{
+font-family: 'Permanent Marker', cursive;
+}
+/* ==========================================================================
+   #FONT
+   ========================================================================== */
+.font-robo {
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+}
+.btn-color
+{
+   background: #CF4F0C;
+}
+
+
+/* ==========================================================================
+   #PAGE WRAPPER
+   ========================================================================== */
+.page-wrapper {
+  min-height: 100vh;
+}
+
+.text-courgette {
+font-family: 'Courgette', cursive !important;
+}
+
+.text-fredoka {
+font-family: 'Fredoka One', cursive !important;}
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+.p-t-100 {
+  padding-top: 100px;
+}
+
+.p-t-180 {
+  padding-top: 180px;
+}
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-t-30 {
+  padding-top: 30px;
+}
+
+.p-t-50 {
+  padding-top: 50px;
+}
+.p-b-100 {
+  padding-bottom: 100px;
+}
+.p-b-50 {
+  padding-bottom: 50px;
+}
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+.wrapper {
+  margin: 0 auto;
+}
+
+.wrapper--w960 {
+  max-width: 960px;
+}
+
+.wrapper--w680 {
+  max-width: 680px;
+}
+

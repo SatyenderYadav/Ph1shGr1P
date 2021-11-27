@@ -1,0 +1,48 @@
+{%include 'nav.html' %}
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col" role="main">
+
+  <div class="mainbox ">
+
+    <div class="maintext text-center">
+      <h1 style="color:white;  font-family: 'Fredoka One', cursive !important;" class="xtext ">Attachment Urls & IP</h1>
+      <div class=" content" >
+
+       {% for value in urls %}
+       {% if 'www.w3c.org' not in value and 'w3.org' not in value%}
+       <form method="POST" action="/urls">
+         <hr style="color: white; ">
+         <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #fff;font-size: 15px;">{{value.split('">')[0].split('"')[0]}}  </span></p>
+         <div class="form-row py-5">
+           {% set url=value.split('">')[0].split('"')[0] %}
+           <input type="hidden" name="url" value="{{url}}">
+           <input type="submit" name="SUBMIT" class="btn  btn-lg btn-shadow btn-outline-success text-light mx-auto text-lobaster2" value="Screenshot" data-aos="zoom-out" data-aos-duration="600">
+         </div>
+       </form>
+       {% else %}
+
+       {% endif %}
+       {% endfor %}
+     </div>
+   </div>
+
+ </div>
+</form>
+<!-- #--------------------- -->
+</div>     
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="{{url_for('static',filename='vendor/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{url_for('static',filename='vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+
+
+<!-- Custom Theme Scripts -->
+<script src="{{url_for('static',filename='js/custom.min.js')}}"></script>
+
+</body>
+</html>

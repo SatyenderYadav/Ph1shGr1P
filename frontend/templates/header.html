@@ -1,0 +1,48 @@
+{%include 'nav.html' %}
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col" role="main">
+
+  <div class="mainbox ">
+
+    <div class="maintext ">
+      <h1 style="color:white; font-family: 'Fredoka One', cursive;" class="xtext ">Header Details</h1>
+      <div class=" content" style="text-align: left; ">
+       {% for key, value in result.items() %}
+       {% if key != 'html' and key != 'text' %}
+       {% if key== 'files' %}
+       <hr style="color: white; ">
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7">Attachment {{key.upper()}}:  </span> </p>
+       {% for sub_key, sub_value in value.items() %}
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7;padding-left:50px;">File Name :</span> {{sub_key}}  </p>
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7;padding-left:50px;">File Save At :</span> {{(sub_value[0])}}  </p>
+       {% endfor %}
+
+       {% else %}
+       <hr style="color: white; ">
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7">{{key.upper()}} :  </span> {{value}} </p>
+       {% endif %}
+       {% endif %}
+       {% endfor %}
+
+     </div>
+   </div>
+   
+ </div>
+ <!-- #--------------------- -->
+</div>     
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="{{url_for('static',filename='vendor/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{url_for('static',filename='vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+
+
+<!-- Custom Theme Scripts -->
+<script src="{{url_for('static',filename='js/custom.min.js')}}"></script>
+
+</body>
+</html>

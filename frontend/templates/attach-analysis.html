@@ -1,0 +1,63 @@
+{%include 'nav.html' %}
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="mainbox ">
+
+    <div class="maintext ">
+      <h1 style="color:white;  font-family: 'Fredoka One', cursive;" class="xtext ">Attachment Analysis</h1>
+      <div class=" content" style="text-align: left; ">
+
+       {% for sub_key, sub_value in result.items() %}
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7;padding-left:50px;">File Name :</span> {{sub_key}}  </p>
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7;padding-left:50px;">File Save At :</span> {{(sub_value)[0]}}  </p>
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7;padding-left:50px;">MD5 :</span> {{(sub_value)[1]}}  </p>
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7;padding-left:50px;">SHA1 :</span> {{(sub_value)[2]}}  </p>
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7;padding-left:50px;">SHA256 :</span> {{(sub_value)[3]}}  </p>
+       <p style="color: white;padding-top: 10px;font-family: 'Rubik', sans-serif; "><span style="color: #01f8b7;padding-left:50px;">File Type :</span> {{(sub_value)[4]}}  </p>
+       {% if 'Microsoft' in (sub_value)[4]%}
+       {% if 'Excel' in (sub_value)[4] or 'Word' in (sub_value)[4] %}
+
+       <div class="form-row py-5">
+       <a href='/microsoft-deep-analysis' class="btn  btn-lg btn-shadow btn-outline-success text-light mx-auto text-lobaster2"  data-aos="zoom-out" data-aos-duration="600"> Deep Analysis Of Microsoft File</a>
+      </div>
+      {% endif %}
+      {% endif %}
+
+      {% if 'HTML document' in (sub_value)[4]%}
+       <form method="POST">
+     <!--  <div class="form-row py-5">
+        <a href='/html-deep-analysis' class="btn  btn-lg btn-shadow btn-outline-success text-light mx-auto text-lobaster2"  data-aos="zoom-out" data-aos-duration="600"> Deep Analysis Of HTML File</a>
+      </div> -->
+      <input type="hidden" name="path" value="{{(sub_value)[0]}}">
+           <input type="submit" name="submit" class="btn  btn-lg btn-shadow btn-outline-success text-light mx-auto text-lobaster2" value="Deep Analysis Of HTML File" data-aos="zoom-out" data-aos-duration="600">
+         </div>
+       </form>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+  <div class="container" style="color: #fff">
+    <pre><code class="language-html" >
+      {{ text }}
+    </code></pre>
+  </div>
+</div>
+<!-- #--------------------- -->
+</div>     
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="{{url_for('static',filename='vendor/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{url_for('static',filename='vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+
+
+<!-- Custom Theme Scripts -->
+<script src="{{url_for('static',filename='js/custom.min.js')}}"></script>
+</body>
+</html>
+
