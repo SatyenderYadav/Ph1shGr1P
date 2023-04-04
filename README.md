@@ -75,4 +75,4 @@ As human we can't detect all the posibilites in our invesgitaions but Ph1sh Gr1P
 ### Credits:
 oledump : Used to find Macros in stream [DidierStevens](https://github.com/DidierStevens)
 
-MailParsing Code : [Dalen](https://stackoverflow.com/users/2247264/dalen)
+[Mail Parsing Code](https://stackoverflow.com/questions/31305754/accessing-only-the-body-of-an-email-using-python) : [Dalen](https://stackoverflow.com/users/2247264/dalen)
